@@ -43,7 +43,7 @@ export default function Banner(){
               src={item}
               alt=''
               width={1080}
-              height={760}
+              height={460}
               loading='lazy'
               quality={100}
               
