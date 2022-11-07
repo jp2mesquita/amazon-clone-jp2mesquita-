@@ -2,7 +2,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className='text-white'>
+    <div className=''>
       <Header />
     </div>
   )
