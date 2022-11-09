@@ -2,13 +2,17 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { StarIcon } from '@heroicons/react/solid'
 import  Currency  from 'react-currency-formatter'
+import { addToBasket } from "../slices/basketSlice"
 
 import { ProductProps } from "../pages"
+import { useDispatch } from "react-redux"
 
 const MAX_RATING = 5
 const MIN_RATING = 1
 
 export default function Product({ id, title, price, description, category, image} : ProductProps){
+
+  const dispath = useDispatch()
 
   const [hasPrime, setHasPrime] = useState(false)
   const [rating, setRating] = useState(1)
@@ -22,6 +26,21 @@ export default function Product({ id, title, price, description, category, image
   }, [])
 
   
+  function handleAddToBasket(){
+    const product = {
+      id, 
+      title,
+      price, 
+      description, 
+      category, 
+      image,
+      rating,
+      hasPrime
+    }
+
+    dispath(addToBasket(product))
+  }
+
   return(
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
       <p className="absolute top-2 right-2 text-xs italic text-gray-400 my-3">{category}</p>
@@ -64,7 +83,10 @@ export default function Product({ id, title, price, description, category, image
         </div>
       )}
 
-      <button className="mt-auto button">
+      <button 
+        onClick={() => handleAddToBasket()}
+        className="mt-auto button"
+      >
         Add to Basket
       </button>
     </div>
