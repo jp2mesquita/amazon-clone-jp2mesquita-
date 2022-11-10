@@ -15,6 +15,9 @@ const nextConfig = {
         pathname: '/**'
       }
     ]
+  },
+  env: {
+    NEXT_STRIPE_PUBLIC_KEY: process.env.NEXT_STRIPE_PUBLIC_KEY
   }
 }
 
