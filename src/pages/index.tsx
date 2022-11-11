@@ -1,9 +1,11 @@
 import { GetServerSideProps } from "next";
+import { unstable_getServerSession } from "next-auth";
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
 import { api } from "../lib/axios";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 export interface ProductProps{
   id: number,
@@ -40,16 +42,20 @@ export default function Home(products: ProductProps[]) {
 
 
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  )
+  
   const products = await api.get('/products')
 
-
-
- 
   return{
     props:{
-      products: products.data
+      products: products.data,
+      session
     }
   }
 }
