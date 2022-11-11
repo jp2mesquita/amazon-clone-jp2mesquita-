@@ -7,6 +7,9 @@ import Currency from 'react-currency-formatter'
 import { useSession } from "next-auth/react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
+import { unstable_getServerSession } from "next-auth";
+import { GetServerSideProps } from "next";
+import { authOptions } from "./api/auth/[...nextauth]";
  
 
 const stripePromise = loadStripe(process.env.NEXT_STRIPE_PUBLIC_KEY)
@@ -99,4 +102,19 @@ export default function Checkout(){
       </main>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  )
+
+  return{
+    props:{
+      session
+    }
+  }
 }
