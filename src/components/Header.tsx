@@ -49,7 +49,7 @@ export default function Header(){
             </p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
-          <div className="link">
+          <div onClick={ () => router.push('/orders')} className="link">
             <p className="font-extrabold md:text-sm">Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
