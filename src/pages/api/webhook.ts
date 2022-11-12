@@ -46,6 +46,7 @@ const fulfillOrder = async (session: any) => {
     })
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) =>{
   if(req.method === 'POST'){
     const requestBuffer = await buffer(req)
