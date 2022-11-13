@@ -28,7 +28,7 @@ const app = !admin.apps.length
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET
 
 const fulfillOrder = async (session: any) => {
-  console.log('To maluco', session)
+  
   return app
     .firestore()
     .collection('users')
