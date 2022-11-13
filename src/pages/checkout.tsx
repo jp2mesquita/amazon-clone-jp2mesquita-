@@ -10,9 +10,11 @@ import axios from "axios";
 import { unstable_getServerSession } from "next-auth";
 import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
+import Head from "next/head";
  
 
 const stripePromise = loadStripe(process.env.NEXT_STRIPE_PUBLIC_KEY)
+
 
 export default function Checkout(){
 
@@ -42,6 +44,11 @@ export default function Checkout(){
 
   return(
     <div className="bg-gray-100">
+
+      <Head >
+        <title>Checkout | Amazon 2.0</title>
+      </Head>
+
       <Header />
 
       <main className="lg:flex max-w-screen-2xl mx-auto">

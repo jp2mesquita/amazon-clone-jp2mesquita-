@@ -9,6 +9,7 @@ import moment from 'moment'
 import ProductProps from '../pages/index'
 import { Stripe } from "stripe";
 import Order from "../components/Order";
+import Head from "next/head";
 
 export interface OrderProps{
   id: string
@@ -26,6 +27,9 @@ export default function Orders(orders: OrderProps[]){
   const {data: session} = useSession()
   return(
     <div>
+      <Head >
+        <title>My Orders | Amazon 2.0</title>
+      </Head>
       <Header />
 
       <main className="max-w-screen-lg mx-auto p-10">

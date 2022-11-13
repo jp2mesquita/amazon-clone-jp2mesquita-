@@ -1,6 +1,7 @@
 import { CheckCircleIcon } from "@heroicons/react/solid";
 import { GetServerSideProps } from "next";
 import { unstable_getServerSession } from "next-auth";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
 import { authOptions } from "./api/auth/[...nextauth]";
@@ -11,6 +12,11 @@ export default function Success(){
 
   return(
     <div className="bg-gray-100 h-screen">
+
+      <Head >
+        <title>Success | Amazon 2.0</title>
+      </Head>
+
       <Header />
       
       <main className="max-w-screen-lg mx-auto">
