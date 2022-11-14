@@ -26,7 +26,8 @@ Nesta aplicação web o usuário terá acesso a um catálago produtos disponíve
 * Remover um item de cada vez no carrinho.
 * Fazer login com uma conta Google
 * Realizar uma compra através de uma integração com Stripe
-* Ter acesso ás compras anteriores atravez de uma conexão com banco de dados do Firebase
+* Ter acesso ás compras anteriores através de uma conexão com banco de dados do Firebase
+* Pesquisar por items específicos (🚧  Em construção...  🚧)
 
 
 <span id="tabela-de-conteudo" ></span>
@@ -96,8 +97,6 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 * [Node.js (v18.12.0)](https://nodejs.org/en/)
 * [VSCode](https://code.visualstudio.com/) (Editor sugerido)
 
-## ⚙️ Como rodar a aplicação web
-=================
 
 <span id='como-rodar-a-aplicacao-web'></span>
 
@@ -118,6 +117,9 @@ Para isso vou deixar dois links que podem ser úteis para conseguir realizar est
 <a href='https://mixed-snapper-bd4.notion.site/Google-Authentication-com-Firebase-e-NextAuth-93fc15a5cc664ec2bb841eaa01d8e372'> 
   Como configurar autenticação com firebase e google
 </a> 
+<a href='#'> 
+  Desculpe, este link ainda não está disponível
+</a>
 
 </br>
 
