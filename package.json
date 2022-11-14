@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.2.2",
     "@heroicons/react": "^1.0.6",
     "@reduxjs/toolkit": "^1.9.0",
     "@stripe/stripe-js": "^1.42.1",
